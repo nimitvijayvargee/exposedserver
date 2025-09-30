@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>exposedserver console</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    exposedserver dashboard <br>
+    <hr class="divider">
+    <label for="port">Port:</label>
+    <input type="text" id="port" placeholder="8080" class="connectioninput">
+    <hr class="mini-divider">
+    <label for="host">Host:</label>
+    <input type="text" id="host" placeholder="127.0.0.1" class="connectioninput">
+    <hr class="mini-divider">
+    <label for="apiKey">API Key:</label>
+    <input type="password" id="apiKey" class="connectioninput">
+    <hr class="mini-divider">
+    <button onclick="connect()">Connect</button>
+    <span id="status">Not connected</span>
+    <hr class="divider">
+    server information
+    <div id="serverinfo">
+        <div id="motdcontainer">
+            <span class="label">MoTD:</span>
+            <span class="infovalue" id="motd">[MOTD Not found]</span>
+        </div>
+        <div id="playercountcontainer">
+            <span class="label">Players:</span>
+            <span class="infovalue" id="playercount">??/??</span>
+        </div>
+        <div id="msptcontainer">
+            <span class="label">ms/t:</span>
+            <span class="infovalue" id="mspt">??ms</span>
+        </div>
+        <div id="entitycountcontainer">
+            <span class="label">Entities:</span>
+            <span class="infovalue" id="entitycount">??</span>
+        </div>
+        <div id="chunkscontainer">
+            <span class="label">Chunks:</span>
+            <span class="infovalue" id="chunks">??</span>
+        </div>
+        <div id="ramcontainer">
+            <span class="label">RAM:</span>
+            <span class="infovalue" id="rammb">??MB/??MB</span> <span class="label">|</span>
+            <span class="infovalue" id="ramgb">??GB/??GB</span>
+        </div>
+        <div id="playerlistcontainer">
+            <span class="label">Players online:</span> <br />
+            <span class="infovalue" id="playerlistvalue">[Player list not found]</span>
+        </div>
+    </div>
+    <hr class="divider" style="display: none;">
+    <div id="dashboard" style="display: none;">
+        <div id="console" style="display: none;">
+            <span class="error console"> [ERROR][00:00:00] Placeholder Error </span>
+            <span class="warning console"> [WARN ][00:00:00] Placeholder Warning </span>
+            <span class="info console"> [INFO ][00:00:00] Placeholder Info </span>
+            <span class="chat console"> [CHAT ][00:00:00] Placeholder Chat </span>
+        </div>
+        <div class="consoleinputs" style="width: 49%; float: left;">
+            <input type="text" id="commandInput" placeholder="Run command" class="consoleinput"> <br />
+            <button onclick="sendCommand()" class="consoleinput">execute</button>
+        </div>
+        <div class="consoleinputs" style="width: 49%; float: right;">
+            <input type="text" id="commandInput" placeholder="Send chat message as server" class="consoleinput"> <br />
+            <button onclick="sendMessage()" class="consoleinput">send</button>
+        </div>
+        <br /><br />
+    </div>
+
+
+
+</body>
+
+</html>

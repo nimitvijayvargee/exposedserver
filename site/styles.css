@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+/* Colours */
+:root {
+    --black: #0C0C0C;
+    --blue: #0037DA;
+    --cyan: #3A96DD;
+    --green: #13A10E;
+    --purple: #881798;
+    --red: #C50F1F;
+    --white: #CCCCCC;
+    --yellow: #C19C00;
+
+    --brightBlack: #767676;
+    --brightBlue: #3B78FF;
+    --brightCyan: #61D6D6;
+    --brightGreen: #16C60C;
+    --brightPurple: #B4009E;
+    --brightRed: #E74856;
+    --brightWhite: #F2F2F2;
+    --brightYellow: #F9F1A5;
+}
+
+.black {
+    color: var(--black);
+}
+
+.blue {
+    color: var(--blue);
+}
+
+.cyan {
+    color: var(--cyan);
+}
+
+.green {
+    color: var(--green);
+}
+
+.purple {
+    color: var(--purple);
+}
+
+.red {
+    color: var(--red);
+}
+
+.white {
+    color: var(--white);
+}
+
+.yellow {
+    color: var(--yellow);
+}
+
+.brightBlack {
+    color: var(--brightBlack);
+}
+
+.brightBlue {
+    color: var(--brightBlue);
+}
+
+.brightCyan {
+    color: var(--brightCyan);
+}
+
+.brightGreen {
+    color: var(--brightGreen);
+}
+
+.brightPurple {
+    color: var(--brightPurple);
+}
+
+.brightRed {
+    color: var(--brightRed);
+}
+
+.brightWhite {
+    color: var(--brightWhite);
+}
+
+.brightYellow {
+    color: var(--brightYellow);
+}
+
+/* Global */
+::selection {
+    background-color: var(--brightWhite);
+    color: var(--black);
+}
+
+body {
+    margin: 10vmin 20vw 0px 20vw;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 20px;
+    font-family: "Fira Code", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: xx-large;
+}
+
+input {
+    border: 2px solid var(--brightBlack);
+    background-color: black;
+    color: var(--white);
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+button {
+    border: 2px solid var(--brightBlack);
+    background-color: black;
+    color: var(--white);
+    height: 40px;
+    font-size: x-large;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--brightBlack);
+    color: var(--brightWhite);
+}
+
+#status {
+    color: var(--brightBlack);
+    vertical-align: middle;
+    font-size: medium;
+}
+
+#status.error {
+    color: var(--red);
+}
+
+.divider {
+    border-bottom: 2px solid var(--brightBlack);
+    margin: 2vh 0px;
+    clear: both;
+}
+
+.mini-divider {
+    border-bottom: 1px dotted var(--brightBlack);
+    margin: 1vh 0px;
+    clear: both;
+}
+
+/* Console Area */
+#dashboard {
+    padding: 0px;
+    position: relative;
+}
+
+#console {
+    border: 2px solid var(--brightBlack);
+    background-color: black;
+    color: var(--white);
+    width: 100%;
+    height: 300px;
+    overflow-y: scroll;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px 0px;
+    font-size: large;
+}
+
+span.console {
+    display: block;
+}
+
+span.error {
+    color: var(--brightRed);
+}
+
+span.warning {
+    color: var(--brightYellow)
+}
+
+span.info {
+    color: var(--brightBlack);
+}
+
+span.chat {
+    color: var(--brightCyan);
+}
+
+input.consoleinput {
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+button.consoleinput {
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+/* Server Info Area */
+#serverinfo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#motdcontainer,
+#ramcontainer {
+    flex: 1 1 100%;
+    height: 100px;
+    box-sizing: border-box;
+    border: 1px solid var(--brightBlack);
+    padding: 5px;
+}
+
+#playercountcontainer,
+#msptcontainer,
+#entitycountcontainer,
+#chunkscontainer {
+    flex: 1 1 calc(50% - 10px);
+    /* 2 per row */
+    height: 100px;
+    box-sizing: border-box;
+    border: 1px solid var(--brightBlack);
+    padding: 5px;
+}
+
+
+
+
+.infovalue {
+    color: var(--brightBlue);
+}
+
+.label {
+    color: var(--brightBlack);
+}
