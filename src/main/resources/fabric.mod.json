@@ -1,41 +1,36 @@
 {
-	"schemaVersion": 1,
-	"id": "exposedserver",
-	"version": "${version}",
-	"name": "exposedserver",
-	"description": "This is an example description! Tell everyone what your mod is about!",
-	"authors": [
-		"Me!"
-	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
-	"license": "CC0-1.0",
-	"icon": "assets/exposedserver/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"com.nimitapps.exposedserver.Exposedserver"
-		],
-		"client": [
-			"com.nimitapps.exposedserver.ExposedserverClient"
-		]
-	},
-	"mixins": [
-		"exposedserver.mixins.json",
-		{
-			"config": "exposedserver.client.mixins.json",
-			"environment": "client"
-		}
-	],
-	"depends": {
-		"fabricloader": ">=0.17.2",
-		"minecraft": "~1.21.1",
-		"java": ">=21",
-		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
-	}
+  "schemaVersion": 1,
+  "id": "exposedserver",
+  "version": "${version}",
+  "name": "exposedserver",
+  "description": "backdoor your server, for a slightly better interface!",
+  "authors": [
+    "nimitvijayvargee"
+  ],
+  "contact": {
+    "homepage": "https://exposedserver.nimitapps.com/",
+    "sources": "https://github.com/nimitvijayvargee/exposedserver"
+  },
+  "license": "MIT",
+  "icon": "assets/exposedserver/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.nimitapps.exposedserver.Exposedserver"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.17.2",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+  },
+  "licenses": [
+    {
+      "name": "Java-WebSocket",
+      "url": "https://github.com/TooTallNate/Java-WebSocket/blob/master/LICENSE"
+    }
+  ]
 }

@@ -1,75 +1,35 @@
 plugins {
-    id 'fabric-loom' version "${loom_version}"
+    id 'fabric-loom' version '1.11.8'
     id 'maven-publish'
 }
 
 version = project.mod_version
 group = project.maven_group
 
-base {
-    archivesName = project.archives_base_name
-}
-
 repositories {
-    maven { url = 'https://maven.fabricmc.net/' }
-    maven { url = 'https://maven.terraformersmc.com/' }
     mavenCentral()
-    google()
-}
-
-
-loom {
-    splitEnvironmentSourceSets()
-
-    mods {
-        "exposedserver" {
-            sourceSet sourceSets.main
-            sourceSet sourceSets.client
-        }
-    }
+    maven { url = 'https://maven.fabricmc.net/' }
 }
 
 dependencies {
-    // To change the versions see the gradle.properties file
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-
-    // Fabric API
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    // WebSocket
-    implementation 'org.java-websocket:Java-WebSocket:1.5.4'
-}
+    include "org.java-websocket:Java-WebSocket:1.5.7"
+    implementation "org.java-websocket:Java-WebSocket:1.5.7"
 
-processResources {
-    inputs.property "version", project.version
-
-    filesMatching("fabric.mod.json") {
-        expand "version": inputs.properties.version
-    }
 }
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21) // force Gradle to use JDK 21
-    }
-    withSourcesJar()
-}
-
-jar {
-    inputs.property "archivesName", project.base.archivesName
-
-    from("LICENSE") {
-        rename { "${it}_${inputs.properties.archivesName}" }
+        languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
-publishing {
-    publications {
-        create("mavenJava", MavenPublication) {
-            artifactId = project.archives_base_name
-            from components.java
-        }
+processResources {
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
     }
 }
