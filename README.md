@@ -6,7 +6,7 @@ Minecraft plugin that exposes important information to a websocket, which you ca
 2. Download the mod from GitHub releases
 3. Download fabric API from https://modrinth.com/mod/fabric-api
 4. Run the server jar by running java -jar and your JVM flags.
-5. Accept the Mojang EULA by opening eula.txt and settint false to true.
+5. Accept the Mojang EULA by opening eula.txt and setting false to true.
 6. Put the mod and the Fabric API into the mods folder. 
 7. Make a `exposedserver.json` in the config folder. Inside this file, paste the following content. Restart the server to take effect.
 ```js
